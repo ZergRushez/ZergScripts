@@ -1,4 +1,7 @@
-
+Speed = 3
+print("Scripted by Zerg")
+_G.Speed = true
+_G.Legit = false
 You = game.Players.LocalPlayer.Name
 UIS = game:GetService("UserInputService")
 local lplr = game.Players.LocalPlayer
@@ -79,6 +82,7 @@ print("Aimlock loaded, Scripted by ZERG.")
 end
 end
 end) 
+
 local on = true 
 
 local Box_Color = Color3.fromRGB(255, 0, 0)
@@ -502,7 +506,10 @@ game.Players.PlayerAdded:Connect(function(newplr)
 end)
 
 print("Script fully loaded. Thank Zerg.")
-while _G.Speed do
+local TPSPEED
+TPSPEED = game:GetService("RunService").RenderStepped:Connect(function()
+    if _G.Speed == true then
+        
    if UIS:IsKeyDown(Enum.KeyCode.W) and game:GetService("Workspace")[You].Humanoid.Health > 0 then
        game:GetService("Workspace")[You].HumanoidRootPart.CFrame = game:GetService("Workspace")[You].HumanoidRootPart.CFrame * CFrame.new(0,0,-Speed)
    end;
@@ -518,9 +525,11 @@ while _G.Speed do
     if UIS:IsKeyDown(Enum.KeyCode.Space) and game:GetService("Workspace")[You].Humanoid.Health > 0 then
        game:GetService("Workspace")[You].HumanoidRootPart.CFrame = game:GetService("Workspace")[You].HumanoidRootPart.CFrame * CFrame.new(0,5,0)
 
-   end;
+    end;
+    end
+end)
 wait()
-end
+
 plr = game.Players.LocalPlayer
 mouse = plr:GetMouse()
 local allowedteams = {""}
