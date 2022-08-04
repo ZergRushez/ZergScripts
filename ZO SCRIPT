@@ -379,7 +379,7 @@ game.Players.PlayerAdded:Connect(function(newplr)
     local debounce = 0
     local shifteroffset = 0
 
-
+print("ESP NEARLY LOADED! SCRIPTD ENTIRELY BY ZERG!!! EZZZZ WWWW")
     local function ESP()
         local connection
         connection = game:GetService("RunService").RenderStepped:Connect(function()
